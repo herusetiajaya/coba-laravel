@@ -3,12 +3,22 @@
 @extends('layouts.main')
 
 @section('container')
-<h1 class="mb-3">Post Categories</h1>
-    @foreach ($categories as $category)
-        <ul class="pb-1">
-            <li>
-                <h4><a href="/categories/{{ $category->slug }}" class="">{{ $category->name }}</a></h4>
-            </li>
-        </ul>
-    @endforeach
+
+<div class="container">
+    <div class="row">
+        <h1 class="mb-3">Post Categories</h1>
+        @foreach ($categories as $category)
+            <div class="col-md-4">
+                <div class="card bg-dark text-white mb-3">
+                    <div class="card p-1"><img src="https://source.unsplash.com/1200x300?{{ $category->name }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="position-absolute px-3 py-1">
+                        <a href="/categories/{{ $category->slug }}" class="catcol">{{ $category->name }}</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+
 @endsection

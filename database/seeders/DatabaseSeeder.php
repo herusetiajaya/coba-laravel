@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('martis')
         // ]);
 
-        User::factory(5)->create();
+        User::factory(3)->create();
 
         Category::create([
             'name' => 'Programming',
@@ -40,8 +40,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Game',
             'slug' => 'game'
         ]);
+        Category::create([
+            'name' => 'Film',
+            'slug' => 'film'
+        ]);
 
-        Post::factory(17)->create();
+        Post::factory(20)->create();
 
         // Post::create([
         //     'title' => 'Judul Pertama',

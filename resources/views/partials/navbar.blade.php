@@ -16,6 +16,9 @@
             <a class="nav-link {{ ($title === "All Posts") ? 'active' : '' }}" href="/blog">Blog</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {{ ($title === "Post Categories") ? 'active' : '' }}" href="/categories">Category</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active text-danger font-weight-bold" href="/laravel">&raquo; Laravel &laquo;</a>
           </li>
         </ul>
