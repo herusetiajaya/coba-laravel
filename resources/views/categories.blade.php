@@ -1,5 +1,3 @@
-{{-- @dd($posts) --}}
-
 @extends('layouts.main')
 
 @section('container')
@@ -10,10 +8,13 @@
         @foreach ($categories as $category)
             <div class="col-md-4">
                 <div class="card bg-dark text-white mb-3">
-                    <div class="card p-1"><img src="https://source.unsplash.com/1200x300?{{ $category->name }}" class="img-fluid" alt="">
+                    <div class="card p-1">
+                        <a href="/blog?category={{ $category->slug }}">
+                        <img src="https://source.unsplash.com/1200x300?{{ $category->name }}" class="img-fluid" alt="">
+                        </a>
                     </div>
                     <div class="position-absolute px-3 py-1">
-                        <a href="/categories/{{ $category->slug }}" class="catcol">{{ $category->name }}</a>
+                        <a href="/blog?category={{ $category->slug }}" class="catcol">{{ $category->name }}</a>
                     </div>
                 </div>
             </div>
