@@ -1,6 +1,7 @@
 .main-content{
     background-color: rgb(192, 37, 197);
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 a{
     text-decoration: none;
@@ -25,4 +26,29 @@ h1{
 }
 .catcol{
     color: rgb(92, 251, 12);
+}
+
+/* login css */
+
+.form-signin .form-floating:focus-within {
+z-index: 2;
+}
+
+.form-signin input[type="email"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+margin-bottom: 10px;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+
+/* registration */
+
+.form-registration input {
+    border-radius: 0;
+    margin-bottom: -1px;
 }

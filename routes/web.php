@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 
 /*
@@ -42,7 +43,6 @@ Route::get('/about', function () {
 Route::get('/blog', [PostController::class, 'index']);
 // page single post
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-
 // page all categories
 Route::get('/categories', function () {
     return view('categories', [
@@ -51,3 +51,6 @@ Route::get('/categories', function () {
         'categories' => Category::all()
     ]);
 });
+// page login
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);

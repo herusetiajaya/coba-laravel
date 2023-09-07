@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/img
+/public/bootstrap-5.0.2-dist
 /storage/*.key
 /vendor
 .env
