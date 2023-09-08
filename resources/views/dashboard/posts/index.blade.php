@@ -6,6 +6,14 @@
 </div>
 
 <div class="table-responsive col-lg-5">
+
+  @if(session()->has('success'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{ session('success') }}</strong> close this message <span data-feather="arrow-right"></span>
+    <button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
   <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Post</a>
     <table class="table table-striped table-sm">
       <thead>

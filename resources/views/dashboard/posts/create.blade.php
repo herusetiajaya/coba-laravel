@@ -5,28 +5,48 @@
     <h1 class="h2">Create New Post</h1>
 </div>
 
-<div class="col-lg-7">
+<div class="col-lg-7 mb-3">
     <form action="/dashboard/posts" method="post">
     @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}">
+            <div class="invalid-feedback">
+                @error('title')
+                {{ $message }}
+                @enderror
+            </div>
         </div>
+
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug" disabled readonly>
+            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{ old('slug') }}" readonly>
+            <div class="invalid-feedback">
+                @error('slug')
+                {{ $message }}
+                @enderror
+            </div>
         </div>
+
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id">
                 @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @if(old('category_id') == $category->id)
+                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                    @else 
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>
+
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
-            <input id="body" type="hidden" name="body">
+            @error('body')
+                <p><small class="text-danger">{{ $message }}</small></p>
+            @enderror
+            <input id="body" type="hidden" name="body" value="{{ old('body') }}">
             <trix-editor input="body"></trix-editor>
         </div>
 
