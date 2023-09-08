@@ -8,15 +8,27 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="/dashboard/posts">
+          <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
             <span data-feather="file-text"></span>
-            My Post
+            My Posts
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/dashboard/game">
+          <a class="nav-link" href="/dashboard/user">
+            <span data-feather="user"></span>
+            My Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard/film">
             <span data-feather="film"></span>
             Film
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard/umbrella">
+            <span data-feather="umbrella"></span>
+            Umbrella
           </a>
         </li>
       </ul>
