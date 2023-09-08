@@ -19,6 +19,10 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
