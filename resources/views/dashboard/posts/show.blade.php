@@ -15,7 +15,14 @@
             <div class="card my-3 p-3">
                 <h4>{{ $post->title }}</h4>
                 By : {{ $post->author->name }}, Category {{ $post->category->name }}
-                <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="img-fluid my-2" alt="">
+
+                @if ($post->image)
+                    <div class="img-post-div">
+                        <img src="{{ asset('storage/' . $post->image) }}" class="img-post img-fluid my-2" alt="">
+                    </div> 
+                @else
+                    <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="img-fluid my-2" alt="">
+                @endif
 
                 {!! $post->body !!}
                 

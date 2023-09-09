@@ -98,3 +98,10 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+.img-post-div{
+  overflow: auto;
+}
+.img-post{
+  max-height: 350px;
+}
