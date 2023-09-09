@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-7 mb-3">
-    <form action="/dashboard/posts/{{ $post->slug }}" method="post">
+    <form action="/dashboard/posts/{{ $post->slug }}" method="post" enctype="multipart/form-data">
     @method('put')
     @csrf
         <div class="mb-3">
@@ -43,6 +43,22 @@
         </div>
 
         <div class="mb-3">
+            <label for="image" class="form-label @error('image') is-invalid @enderror">Post Image</label>
+            <input type="hidden" name="oldImage" value="{{ $post->image }}">
+            @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 col-sm-3 d-block">
+            @else
+                <img class="img-preview img-fluid mb-3 col-sm-3 d-block">
+            @endif
+            <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
+            <div class="invalid-feedback">
+                @error('image')
+                    {{ $message }}
+                @enderror
+            </div>
+        </div>
+
+        <div class="mb-3">
             <label for="body" class="form-label">Body</label>
             @error('body')
                 <p><small class="text-danger">{{ $message }}</small></p>
@@ -68,6 +84,14 @@ title.addEventListener('change', function(){
 document.addEventListener('trix-file-accept', function(e){
     e.preventDefault();
 })
+
+function previewImage(){
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    const blob = URL.createObjectURL(image.files[0]);
+    imgPreview.src = blob;
+}
 
 </script>
 
