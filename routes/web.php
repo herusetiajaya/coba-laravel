@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,7 @@ Route::get('/', function () {
     return view('home', [
         "title" => "Home",
         'active' => 'home',
+        User::all()
     ]);
 });
 // page about
@@ -33,9 +36,9 @@ Route::get('/about', function () {
     return view('about', [
         "title" => "About",
         'active' => 'about',
-        "name" => "Martis",
-        "email" => "martis@gmail.com",
-        "image" => "martis.png"
+        "name" => "Heru Setiawan",
+        "email" => "heru27setia@gmail.com",
+        "image" => "rikudo.png"
     ]);
 });
 
@@ -69,3 +72,4 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');

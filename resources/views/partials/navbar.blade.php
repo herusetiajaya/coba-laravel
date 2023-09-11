@@ -26,11 +26,11 @@
           @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Welcome back, {{ auth()->user()->name }}
+              <i class="bi bi-person-circle"> </i>{{ auth()->user()->name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-controller"></i> My Game</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-controller"></i> Game</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action="/logout" method="post">

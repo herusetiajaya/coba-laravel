@@ -18,12 +18,12 @@
           </div>
           @endif
             <img class="mb-2 rounded-3" src="https://source.unsplash.com/500x200?water" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+            <h1 class="h1-form-login fw-normal h3 mb-3">Please Login</h1>
             <form action="/login" method="post">
               @csrf
 
               <div class="form-floating">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}" autofocus required>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="name@example.com" value="{{ old('email') }}">
                 <label for="email">Email address</label>
                 @error('email')
                     <div class="invalid-feedback">
@@ -33,7 +33,7 @@
               </div>
 
               <div class="form-floating">
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                 <label for="password">Password</label>
               </div>
 

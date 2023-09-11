@@ -99,9 +99,11 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
+/* img-post */
 .img-post-div{
   overflow: auto;
 }
-.img-post{
-  max-height: 350px;
+.post-single-img{
+  max-height: 300px;
+  border-radius: 10px;
 }

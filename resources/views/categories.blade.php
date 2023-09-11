@@ -13,8 +13,8 @@
                         <img src="https://source.unsplash.com/1200x300?{{ $category->name }}" class="img-fluid" alt="">
                         </a>
                     </div>
-                    <div class="position-absolute px-3 py-1">
-                        <a href="/blog?category={{ $category->slug }}" class="catcol">{{ $category->name }}</a>
+                    <div class="cat-name-div position-absolute m-1 px-4">
+                        <a href="/blog?category={{ $category->slug }}" class="cat-name">{{ $category->name }}</a>
                     </div>
                 </div>
             </div>

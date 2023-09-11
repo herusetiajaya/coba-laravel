@@ -18,7 +18,7 @@
 
                 @if ($post->image)
                     <div class="img-post-div">
-                        <img src="{{ asset('storage/' . $post->image) }}" class="img-post img-fluid my-2" alt="">
+                        <img src="{{ asset('storage/' . $post->image) }}" class="post-single-img img-fluid my-2" alt="">
                     </div> 
                 @else
                     <img src="https://source.unsplash.com/1200x300?{{ $post->category->name }}" class="img-fluid my-2" alt="">
